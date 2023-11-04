@@ -1,5 +1,4 @@
 package ru.yandex.praktikum.test;
-
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.Augmenter;
