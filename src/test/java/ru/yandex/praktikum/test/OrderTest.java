@@ -66,15 +66,14 @@ public class OrderTest {
 
     @BeforeClass
     public static void initialOrder() {
+        FirefoxOptions options = new FirefoxOptions();
+        driver = new FirefoxDriver(options);
+        driver = new Augmenter().augment(driver);
 
-        //       FirefoxOptions options = new FirefoxOptions();
-        //   driver = new FirefoxDriver(options);
-        //  driver = new Augmenter().augment(driver);
-
-       ChromeOptions options = new ChromeOptions();
-       options.addArguments("--remote-allow-origins=*");
-       driver = new ChromeDriver(options);
-       driver = new Augmenter().augment(driver);
+        // ChromeOptions options = new ChromeOptions();
+        // options.addArguments("--remote-allow-origins=*");
+        // driver = new ChromeDriver(options);
+        // driver = new Augmenter().augment(driver);
 
     }
 

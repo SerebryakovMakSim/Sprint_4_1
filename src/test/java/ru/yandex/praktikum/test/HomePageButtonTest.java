@@ -1,7 +1,6 @@
 package ru.yandex.praktikum.test;
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.remote.Augmenter;
-import org.testng.annotations.AfterMethod;
 import ru.yandex.praktikum.main.MainPage;
 import ru.yandex.praktikum.main.OrderPage;
 import org.junit.BeforeClass;
@@ -25,7 +24,7 @@ public class HomePageButtonTest {
         driver = new FirefoxDriver(options);
         driver = new Augmenter().augment(driver);
     }
-     @Test
+    @Test
     public void testOpen() {
 
         driver.get(FaqTest.SCOOTER_URL);
@@ -44,10 +43,5 @@ public class HomePageButtonTest {
     public static void tearDown() {
         if (driver!=null)
             driver.quit();
-    }
-    @AfterMethod
-    public void afterEachTest() {
-        // Дополнительные действия после каждого теста, если необходимо
-        // Например, добавление скриншотов или запись результатов в отчет
     }
 }
