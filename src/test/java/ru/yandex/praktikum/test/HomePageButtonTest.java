@@ -19,7 +19,7 @@ public class HomePageButtonTest {
     private final int indexButton = 1;
 
     @BeforeClass
-    public void initialOrder() {
+    public static void initialOrder() {
 
         FirefoxOptions options = new FirefoxOptions();
         driver = new FirefoxDriver(options);
