@@ -83,8 +83,9 @@ public class FaqTest {
             System.out.println("Количество всех вопросов: "+faqElements.size());
     }
 
+
     @Test
-    public void myFaqTest() {
+    public void warnFaqTest() {
 
         WebElement faqElement = faqElements.get(index);
 

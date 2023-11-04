@@ -1,7 +1,7 @@
 package ru.yandex.praktikum.test;
-
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.remote.Augmenter;
+import org.testng.annotations.AfterMethod;
 import ru.yandex.praktikum.main.MainPage;
 import ru.yandex.praktikum.main.OrderPage;
 import org.junit.BeforeClass;
@@ -11,24 +11,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class OpenTest {
-    public static WebDriver driver;
-    public static MainPage mainPage;
-    public OrderPage orderPage;
+public class HomePageButtonTest {
+
+    private static WebDriver driver;
+    private static MainPage mainPage;
+    private OrderPage orderPage;
     private final int indexButton = 1;
 
-    public OpenTest() {
-    }
-
     @BeforeClass
-    public static void initialOrder() {
+    public void initialOrder() {
 
         FirefoxOptions options = new FirefoxOptions();
         driver = new FirefoxDriver(options);
         driver = new Augmenter().augment(driver);
     }
-
-    @Test
+     @Test
     public void testOpen() {
 
         driver.get(FaqTest.SCOOTER_URL);
@@ -48,5 +45,9 @@ public class OpenTest {
         if (driver!=null)
             driver.quit();
     }
+    @AfterMethod
+    public void afterEachTest() {
+        // Дополнительные действия после каждого теста, если необходимо
+        // Например, добавление скриншотов или запись результатов в отчет
+    }
 }
-
